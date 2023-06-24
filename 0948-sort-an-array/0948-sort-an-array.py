@@ -10,11 +10,11 @@ class Solution:
         #         nums[j+1] = nums[j]
         #         j -= 1
         #     nums[j+1] = temp
+        # return nums
+        
 
 
-        #mergesort
-
-
+        # mergesort
         def mergeSort(arr, L, M, R):
             left = arr[L: M + 1]
             right = arr[M + 1: R + 1]
@@ -50,3 +50,41 @@ class Solution:
             return nums
         
         return merge(nums, 0, len(nums) - 1)
+
+        #quicksort
+        # def divide(arr, l, r):
+        #     left = l
+        #     pivot = arr[l]
+
+        #     while l < r:
+        #         while l < len(arr) and arr[l] <= pivot:
+        #             l += 1
+
+        #         while arr[r] > pivot:
+        #             r -= 1
+
+        #         if l < r:
+        #             if l != r:
+        #                 temp = arr[l]
+        #                 arr[l] = arr[r]
+        #                 arr[r] = temp
+
+        #     temp = arr[left]
+        #     arr[left] = arr[r]
+        #     arr[r] = temp
+        #     return r
+
+        # def quickSort(arr, l, r):
+
+        #     if l < r:
+        #         mid = divide(arr, l , r)
+        #         quickSort(arr, l, mid - 1)
+        #         quickSort(arr, mid + 1, r)
+
+        #     return arr
+
+        # return quickSort(nums, 0, len(nums) - 1)
+
+
+
+
