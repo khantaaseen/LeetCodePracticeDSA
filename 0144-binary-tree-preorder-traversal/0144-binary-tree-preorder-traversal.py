@@ -10,17 +10,33 @@ class Solution:
         if not root:
             return None
         
-        arr = []
+        res = []
+        stack = []
+        curr = root
+        #iterative solution
+
+        while curr or stack:
+            if curr:
+                res.append(curr.val)
+                if curr.right:
+                    stack.append(curr.right)
+                curr = curr.left
+            else:
+                curr = stack.pop()
         
-        def preOrder(node):
-            if not node:
-                return
+        return res
 
-            arr.append(node.val)
-            preOrder(node.left)
-            preOrder(node.right)
 
-        preOrder(root)
+        #recursive
+        # def preOrder(node):
+        #     if not node:
+        #         return
+
+        #     arr.append(node.val)
+        #     preOrder(node.left)
+        #     preOrder(node.right)
+
+        # preOrder(root)
             
-        return arr
+        return res
 
