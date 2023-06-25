@@ -16,19 +16,24 @@ class Solution:
         def backtrack(i, currString):
 
             if len(currString) == len(digits):
-                print("len string", len(currString))
-                print("len digits", len(digits))
-                print("appending", ans.append(currString))
+                # print("len string", len(currString))
+                # print("len digits", len(digits))
+                # print("appending", ans.append(currString))
+                ans.append(currString)
                 return 
             
             for c in digitsString[digits[i]]:
-                print("currString= ", currString)
-                print("i= ",i)
-                print("c= ",c)
-                print("dict val= ",digitsString[digits[i]])
-                print("ith position of digits= ",digits[i])
+                # print("currString= ", currString)
+                # print("i= ",i)
+                # print("c= ",c)
+                # print("dict val= ",digitsString[digits[i]])
+                # print("ith position of digits= ",digits[i])
                 backtrack(i + 1, currString + c)
             
         if digits:
             backtrack(0, "")
         return ans
+
+
+
+
