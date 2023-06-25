@@ -8,32 +8,32 @@ class Solution:
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
 
 
-        # n = 0
-        # stack = []
-        # curr = root
+        n = 0
+        stack = []
+        curr = root
 
-        # while curr or stack:
-        #     while curr:
-        #         stack.append(curr)
-        #         curr = curr.left
-        #     curr = stack.pop()
-        #     n += 1
-        #     if n == k:
-        #         return curr.val
-        #     curr = curr.right
-        # return 0
+        while curr or stack:
+            while curr:
+                stack.append(curr)
+                curr = curr.left
+            curr = stack.pop()
+            n += 1
+            if n == k:
+                return curr.val
+            curr = curr.right
+        return 0
 
-        self.inorder = []
+        # self.inorder = []
         
-        def inorder(root):
-            if not root:
-                return 
+        # def inorder(root):
+        #     if not root:
+        #         return 
 
-            inorder(root.left)
-            self.inorder.append(root.val)
-            inorder(root.right)
+        #     inorder(root.left)
+        #     self.inorder.append(root.val)
+        #     inorder(root.right)
 
-        inorder(root)
+        # inorder(root)
 
-        return self.inorder[k - 1]
+        # return self.inorder[k - 1]
 
