@@ -9,19 +9,29 @@ class Solution:
 
         if not root:
             return None
-        
-        stack = []
-        res = []
-        curr = root
 
-        while curr or stack:
-            while curr:
-                stack.append(curr)
-                if curr.val == val:
-                    return (curr)
-                curr = curr.left
-            curr = stack.pop()
-            res.append(curr.val)
-            curr = curr.right
-        return None
+
+        if root.val == val:
+            return root
+        
+        if root.val < val:
+            return self.searchBST(root.right, val)
+        
+        if root.val > val:
+            return self.searchBST(root.left, val)
+        
+        # stack = []
+        # res = []
+        # curr = root
+
+        # while curr or stack:
+        #     while curr:
+        #         stack.append(curr)
+        #         if curr.val == val:
+        #             return (curr)
+        #         curr = curr.left
+        #     curr = stack.pop()
+        #     res.append(curr.val)
+        #     curr = curr.right
+        # return None
 
