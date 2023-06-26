@@ -7,6 +7,9 @@
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
 
+        if not root:
+            return None
+
         res = []
         queue = collections.deque()
         queue.append(root)
