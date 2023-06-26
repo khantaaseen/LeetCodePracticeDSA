@@ -7,7 +7,7 @@
 class Solution:
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
 
-
+        #iterative solution
         n = 0
         stack = []
         curr = root
@@ -23,6 +23,8 @@ class Solution:
             curr = curr.right
         return 0
 
+        #recursive solution
+        
         # self.inorder = []
         
         # def inorder(root):
