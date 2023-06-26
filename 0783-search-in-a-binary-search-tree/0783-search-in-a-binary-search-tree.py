@@ -11,27 +11,25 @@ class Solution:
             return None
 
 
-        if root.val == val:
-            return root
+        # if root.val == val:
+        #     return root
         
-        if root.val < val:
-            return self.searchBST(root.right, val)
+        # if root.val < val:
+        #     return self.searchBST(root.right, val)
         
-        else:
-            return self.searchBST(root.left, val)
+        # else:
+        #     return self.searchBST(root.left, val)
         
-        # stack = []
-        # res = []
-        # curr = root
+        stack = []
+        curr = root
 
-        # while curr or stack:
-        #     while curr:
-        #         stack.append(curr)
-        #         if curr.val == val:
-        #             return (curr)
-        #         curr = curr.left
-        #     curr = stack.pop()
-        #     res.append(curr.val)
-        #     curr = curr.right
-        # return None
+        while curr or stack:
+            while curr:
+                stack.append(curr)
+                if curr.val == val:
+                    return (curr)
+                curr = curr.left
+            curr = stack.pop()
+            curr = curr.right
+        return None
 
