@@ -7,43 +7,43 @@
 class Solution:
     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
 
-        if not headA or not headB:
-            return None
+        # if not headA or not headB:
+        #     return None
 
 
-        currA = headA
-        currB = headB
+        # currA = headA
+        # currB = headB
 
-        while currA != currB:
-            if currA:
-                currA = currA.next
-            else:
-                currA = headB
+        # while currA != currB:
+        #     if currA:
+        #         currA = currA.next
+        #     else:
+        #         currA = headB
 
-            if currB:
-                currB = currB.next
-            else:
-                currB = headA
-        return currA
+        #     if currB:
+        #         currB = currB.next
+        #     else:
+        #         currB = headA
+        # return currA
 
         
-        # hashset = set()
-        # curr = headA
+        hashset = set()
+        curr = headA
         
-        # while curr:
-        #     hashset.add(curr)
-        #     print("add to set: ", curr.val)
-        #     curr = curr.next
+        while curr:
+            hashset.add(curr)
+            print("add to set: ", curr.val)
+            curr = curr.next
         
-        # curr = headB
-        # while curr:
-        #     if curr in hashset:
-        #         print("curr.val in hashset", curr.val)
-        #         return curr
-        #     print("curr val: ", curr.val)
-        #     curr = curr.next
+        curr = headB
+        while curr:
+            if curr in hashset:
+                print("curr.val in hashset", curr.val)
+                return curr
+            print("curr val: ", curr.val)
+            curr = curr.next
 
-        # return None
+        return None
 
 
 
