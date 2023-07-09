@@ -32,15 +32,12 @@ class Solution:
         
         while curr:
             hashset.add(curr)
-            print("add to set: ", curr.val)
             curr = curr.next
         
         curr = headB
         while curr:
             if curr in hashset:
-                print("curr.val in hashset", curr.val)
                 return curr
-            print("curr val: ", curr.val)
             curr = curr.next
 
         return None
