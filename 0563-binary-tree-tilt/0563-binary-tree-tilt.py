@@ -7,7 +7,7 @@
 class Solution:
     def findTilt(self, root: Optional[TreeNode]) -> int:
 
-        res = 0
+        self.res = 0
 
         def dfs(node):
             if not node:
@@ -16,11 +16,10 @@ class Solution:
             leftsum = dfs(node.left)
             rightsum = dfs(node.right)
 
-            nonlocal res
-            res += abs(leftsum - rightsum)
+            self.res += abs(leftsum - rightsum)
             
             return node.val + leftsum + rightsum
         
         dfs(root)
 
-        return res
+        return self.res
