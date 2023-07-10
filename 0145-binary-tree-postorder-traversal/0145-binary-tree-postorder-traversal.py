@@ -14,11 +14,8 @@ class Solution:
         def dfs(node):
 
             if not node: return None
-
-            if node.left:
+            else:
                 dfs(node.left)
-            
-            if node.right:
                 dfs(node.right)
 
             res.append(node.val)
