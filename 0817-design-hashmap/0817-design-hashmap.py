@@ -1,51 +1,75 @@
-class ListNode:
+# class ListNode:
     
-    def __init__(self, key = -1, val = -1, next = None):
-        self.key = key
-        self.val = val
-        self.next = next
+#     def __init__(self, key = -1, val = -1, next = None):
+#         self.key = key
+#         self.val = val
+#         self.next = next
+
+# class MyHashMap:
+
+#     def __init__(self):
+#         self.hashmap = [ListNode() for i in range(1000)]
+    
+#     def hashIndex(self, key):
+#         return key % len(self.hashmap)
+
+#     def put(self, key: int, value: int) -> None:
+
+#         curr = self.hashmap[self.hashIndex(key)]
+
+#         while curr.next:
+#             if curr.next.key == key:
+#                 curr.next.val = value
+#                 return
+#             curr = curr.next
+#         curr.next = ListNode(key, value)
+
+    
+#     def get(self, key: int) -> int:
+
+#         curr = self.hashmap[self.hashIndex(key)].next
+
+#         while curr:
+#             if curr.key == key:
+#                 return curr.val
+#             curr = curr.next
+        
+#         return -1
+        
+
+#     def remove(self, key: int) -> None:
+
+#         curr = self.hashmap[self.hashIndex(key)]
+
+#         while curr and curr.next:
+#             if curr.next.key == key:
+#                 curr.next = curr.next.next
+#                 return
+#             curr = curr.next
 
 class MyHashMap:
 
     def __init__(self):
-        self.hashmap = [ListNode() for i in range(1000)]
-    
-    def hashIndex(self, key):
-        return key % len(self.hashmap)
+        self.hashmap = {}
 
     def put(self, key: int, value: int) -> None:
-
-        curr = self.hashmap[self.hashIndex(key)]
-
-        while curr.next:
-            if curr.next.key == key:
-                curr.next.val = value
-                return
-            curr = curr.next
-        curr.next = ListNode(key, value)
-
-    
+        
+        if key in self.hashmap:
+            self.hashmap[key] = value
+        
+        self.hashmap[key] = value
+            
     def get(self, key: int) -> int:
 
-        curr = self.hashmap[self.hashIndex(key)].next
+        if key in self.hashmap:
+            return self.hashmap[key]
 
-        while curr:
-            if curr.key == key:
-                return curr.val
-            curr = curr.next
-        
         return -1
         
-
     def remove(self, key: int) -> None:
 
-        curr = self.hashmap[self.hashIndex(key)]
-
-        while curr and curr.next:
-            if curr.next.key == key:
-                curr.next = curr.next.next
-                return
-            curr = curr.next
+        if key in self.hashmap:
+            del self.hashmap[key]
 
 
 # Your MyHashMap object will be instantiated and called as such:
