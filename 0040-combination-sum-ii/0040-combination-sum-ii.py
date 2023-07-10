@@ -22,7 +22,6 @@ class Solution:
                 curr.pop()
 
                 prev = candidates[i]
-
         backtrack([], 0, target)
 
         return res
