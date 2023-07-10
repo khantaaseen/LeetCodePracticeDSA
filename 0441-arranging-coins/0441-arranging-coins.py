@@ -1,6 +1,8 @@
 class Solution:
     def arrangeCoins(self, n: int) -> int:
 
+        if n == 1: return 1
+
         l , r = 0 , n 
         res = 0
 
