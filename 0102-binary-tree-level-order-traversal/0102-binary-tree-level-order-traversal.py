@@ -11,7 +11,7 @@ class Solution:
             return None
 
         res = []
-        queue = collections.deque()
+        queue = deque()
         queue.append(root)
 
         while queue:
@@ -19,6 +19,7 @@ class Solution:
             order = []
             for i in range(level):
                 node = queue.popleft()
+                level += 1
                 if node:
                     order.append(node.val)
                     queue.append(node.left)
