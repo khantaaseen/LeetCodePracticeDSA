@@ -10,7 +10,6 @@ class Solution:
         res = []
 
         def dfs(node):
-
             if not node: return None
 
             dfs(node.left)
@@ -18,5 +17,20 @@ class Solution:
             res.append(node.val)
             
         dfs(root)
+
+        #iterative solution
+        # stack = [root]
+        # res = []
+
+        # while root or stack:
+        #     node = stack.pop()
+        #     res.append(node.val)
+        #     if node.right:
+        #         stack.append(node.right)
+        #     if node.left:
+        #         stack.append(node.left)
+        #     if curr:
+        #         res.append(curr.val)
+        #     else:
 
         return res
